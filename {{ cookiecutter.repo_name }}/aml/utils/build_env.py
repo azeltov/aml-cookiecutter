@@ -56,11 +56,11 @@ def is_environment_built(environ: Environment) -> bool:
               help="The name of the registered environment to build")
 @click.option("--version", '-v', type=int, default=None,
               help="The version of the registered environment to build")
-@click.option("--async", "-q", dest="run_async", action="store_true",
+@click.option("--async", "-q", "run_async", is_flag=True, default=False,
               help="Run asyncronously")
-@click.option('--local', '-l', action="store_true",
+@click.option('--local', '-l', is_flag=True, default=False,
               help="Build the environment on the local compute context")
-@click.option('--force', '-F', action="store_true",
+@click.option('--force', '-F', is_flag=True, default=False,
               help="Force image rebuild")
 def main(name: str, version: int, run_async: bool, local: bool, force: bool):
     """If the environment is already built, either exit or pull it locally"""

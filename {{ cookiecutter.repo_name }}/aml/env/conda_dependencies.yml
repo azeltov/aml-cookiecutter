@@ -1,0 +1,11 @@
+channels:
+- anaconda
+- conda-forge
+dependencies:
+- python=3.8.6
+- pip
+- click
+- pip:
+  - azureml-mlflow
+
+name: {{ cookiecutter.environment_name }}

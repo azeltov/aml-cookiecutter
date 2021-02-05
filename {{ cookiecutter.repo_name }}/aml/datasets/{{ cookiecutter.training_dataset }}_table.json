@@ -1,0 +1,22 @@
+{
+  "datasetType": "Tabular",
+  "parameters": {
+    "path": [
+      {
+        "datastoreName": "{{ cookiecutter.training_datastore }}",
+        "relativePath": "{{ cookiecutter.training_data_path }}"
+      }
+    ],
+    "sourceType": "parquet_files"
+  },
+  "registration": {
+    "createNewVersion": true,
+    "description": "This is a tabular dataset of the {{ cookiecutter.training_dataset }} dataset",
+    {% if cookiecutter.include_dataset_yaml == 'Both' %}
+      "name": "{{ cookiecutter.training_dataset }}-tabular"
+    {% else %}
+      "name": "{{ cookiecutter.training_dataset }}"
+    {% endif %}
+  },
+  "schemaVersion": 1
+}

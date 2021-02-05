@@ -1,0 +1,20 @@
+{
+  "datasetType": "File",
+  "parameters": {
+    "path": [
+    {
+      "datastoreName": "{{ cookiecutter.training_datastore }}",
+      "relativePath": "{{ cookiecutter.training_data_path }}"
+    }
+  ]},
+  "registration": {
+    "createNewVersion": true,
+    "description": "This is a files dataset of the {{ cookiecutter.training_dataset }} dataset",
+    {% if cookiecutter.include_dataset_yaml == 'Both' %}
+      "name": "{{ cookiecutter.training_dataset }}-files"
+    {% else %}
+      "name": "{{ cookiecutter.training_dataset }}"
+    {% endif %}
+  },
+  "schemaVersion": 1
+}

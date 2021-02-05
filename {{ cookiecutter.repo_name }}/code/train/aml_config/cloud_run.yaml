@@ -1,0 +1,21 @@
+# The script to run.
+script: train.py
+arguments: ["--train-data", "$TRAIN_DATA"]
+target: cpu-cluster
+framework: Python
+nodeCount: 1
+environment:
+  name: {{ cookiecutter.environment_name }}
+history:
+  outputCollection: true
+  snapshotProject: true
+  directoriesToWatch:
+  - logs
+data:
+  train_data:
+    dataLocation:
+      dataset:
+        name: {{ cookiecutter.training_dataset }}
+        version: latest
+    mechanism: mount
+    environmentVariableName: TRAIN_DATA

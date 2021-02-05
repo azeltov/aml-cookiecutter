@@ -1,0 +1,10 @@
+{
+    "project_name": "Project Name",
+    "repo_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "experiment_name": "{{ cookiecutter.repo_name }}",
+    "environment_name": "{{ cookiecutter.repo_name }}",
+    "include_dataset_yaml": ["Files", "Tabular", "Both", "None"],
+    "training_dataset": "dataset_name",
+    "training_datastore": "datastore",
+    "training_data_path": "data/train.csv"
+}

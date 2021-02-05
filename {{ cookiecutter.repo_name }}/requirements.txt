@@ -1,0 +1,6 @@
+# Required Python packages to run this repo locally
+# This is NOT the list of requirements to be used by the Training Run 
+# For train.py requirements, edit aml/env/conda_dependencies.yaml
+azureml-sdk
+docker
+click
